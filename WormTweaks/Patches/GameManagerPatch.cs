@@ -11,11 +11,15 @@ namespace WormTweaks.Patches
     {
         [HarmonyPatch("Awake")]
         [HarmonyPostfix]
-        static void GlobalGravityPatch(GameManager __instance)
+        static void StartupPatches(GameManager __instance)
         {
             if (WormTweaksMod.configGlobalGravityMultiplier.Value != 1f)
             {
                 Physics.gravity = new Vector3(0, -9.81f * WormTweaksMod.configGlobalGravityMultiplier.Value, 0);
+            }
+            if (WormTweaksMod.configDynamiteRadiusMultiplier.Value != 1f)
+            {
+                Dynamite.CONST_dynamiteRadius *= WormTweaksMod.configDynamiteRadiusMultiplier.Value;
             }
         }
 

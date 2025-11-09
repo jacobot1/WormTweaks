@@ -8,4 +8,6 @@ This is my first ever Last Train Outta Wormtown mod and I'm super excited to sta
 
 - Changing global gravity
 
+- Changing Dynamite explosion radius (doesn't change danger circle size for some reason)
+
 Please post an Issue with any feedback; I'd love to hear it.

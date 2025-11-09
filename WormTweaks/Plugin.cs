@@ -21,6 +21,7 @@ namespace WormTweaks
         public static ConfigEntry<float> configPlayerYeet;
         public static ConfigEntry<float> configWormSpeedMultiplier;
         public static ConfigEntry<float> configGlobalGravityMultiplier;
+        public static ConfigEntry<float> configDynamiteRadiusMultiplier;
 
         // Initalize Harmony
         private readonly Harmony harmony = new Harmony(modGUID);
@@ -63,6 +64,11 @@ namespace WormTweaks
                                                 "GlobalGravity",
                                                 1f,
                                                 "Gravity multiplier for all objects using default gravity. Default is 1.");
+
+            configDynamiteRadiusMultiplier = Config.Bind("Dynamite",
+                                                "DynamiteRadiusMultiplier",
+                                                1f,
+                                                "Multiplied by defualt dynamite radius to change the size of the explosion");
 
             // Do the patching
             harmony.PatchAll(typeof(WormTweaksMod));
