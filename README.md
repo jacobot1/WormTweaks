@@ -10,4 +10,6 @@ This is my first ever Last Train Outta Wormtown mod and I'm super excited to sta
 
 - Changing Dynamite explosion radius (doesn't change danger circle size for some reason)
 
+Everyone is required to have the mod installed.
+
 Please post an Issue with any feedback; I'd love to hear it.

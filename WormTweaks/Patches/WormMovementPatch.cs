@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using HarmonyLib;
-using UnityEngine;
+﻿using HarmonyLib;
 
 namespace WormTweaks.Patches
 {

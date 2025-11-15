@@ -3,12 +3,16 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
-using UnityEngine;
 using WormTweaks.Patches;
 
 namespace WormTweaks
 {
+    [AttributeUsage(AttributeTargets.Class)]
+    internal class MMReqVersion : Attribute { }
+
+    [BepInDependency("wwwDayDream.MultiplayerModRestrictor")]
     [BepInPlugin(modGUID, modName, modVersion)]
+    [MMReqVersion]
     public class WormTweaksMod : BaseUnityPlugin
     {
         // Mod metadata
@@ -68,7 +72,7 @@ namespace WormTweaks
             configDynamiteRadiusMultiplier = Config.Bind("Dynamite",
                                                 "DynamiteRadiusMultiplier",
                                                 1f,
-                                                "Multiplied by defualt dynamite radius to change the size of the explosion");
+                                                "Multiplied by default dynamite radius to change the size of the explosion. Default is 1.");
 
             // Do the patching
             harmony.PatchAll(typeof(WormTweaksMod));
